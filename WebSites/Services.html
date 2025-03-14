@@ -776,19 +776,6 @@
             try {
                 console.log('Intentando abrir modal desde QR');
                 
-                // Añadir un mensaje de depuración visible en la página
-                const debugElement = document.createElement('div');
-                debugElement.style.position = 'fixed';
-                debugElement.style.bottom = '0';
-                debugElement.style.right = '0';
-                debugElement.style.backgroundColor = 'rgba(0,0,0,0.7)';
-                debugElement.style.color = 'white';
-                debugElement.style.padding = '5px';
-                debugElement.style.fontSize = '12px';
-                debugElement.style.zIndex = '9999';
-                debugElement.textContent = `URL: ${window.location.href}, Params: source=${source}, qr=${qr}`;
-                document.body.appendChild(debugElement);
-                
                 // Dar tiempo para asegurar que todo está cargado
                 setTimeout(function() {
                     if (tutorialsBtn && tutorialsModal) {
