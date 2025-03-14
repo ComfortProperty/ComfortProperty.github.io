@@ -1,0 +1,1186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    box-sizing: 0;
+}
+body{
+    background: #dee1e2;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.top-message {
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1em;
+    position: fixed;
+    z-index: 1000;
+}
+
+@media(max-width:560px){
+    .top-message{
+        font-size: 0.8em;
+        padding-top: 12px;
+    }
+}
+
+@media(max-width:440px){
+    .top-message{
+        font-size: 0.6em;
+        padding-top: 14px;
+    }
+}
+
+header{
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+}
+
+@media (max-width:1158px){
+    header ul li a{
+        font-size: 12px;
+    }
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.imglogo {
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+}
+.grupo{
+    display: flex;
+    align-items: center;
+    margin-right: 85px;
+}
+header ul{
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    text-decoration: none;
+    font: 1em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+header ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: .2px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scaleX(0);
+    transition: 0.5s ease-in-out;
+    transform-origin: right;
+}
+header ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+header .search .icon{
+    display: flex; /* Para que los íconos estén en línea */
+    align-items: center; /* Alinea verticalmente */
+    gap: 8px; /* Espacio entre los iconos */
+    cursor: pointer;
+    z-index: 10;
+}
+.search svg{
+    width: 24px;
+    height: auto;
+    z-index: 10;
+}
+.searchbox{
+    position: absolute;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #fff;
+    align-items: center;
+    padding: 0 30px;
+    transition: 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.searchbox.active{
+    right: -50px;
+}
+
+.searchbox input{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 1.25em;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.searchbutton{
+    position: relative;
+    left: 30px;
+    transition: 0.5s ease-in-out;
+}
+
+.searchbutton.active{
+    left: 0;
+}
+
+.cancelbutton{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5;
+    scale: 0;
+}
+
+.cancelbutton.active{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
+}
+
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.search-suggestions.active {
+    max-height: 300px;
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos para cada elemento de sugerencia */
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #f5f5f5;
+}
+
+.suggestion-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.suggestion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.suggestion-content {
+    flex: 1;
+}
+
+.suggestion-content h3 {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.suggestion-content p {
+    font-size: 12px;
+    margin: 0;
+    color: #666;
+}
+
+/* Mensaje de no resultados */
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .search-suggestions {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.menuToggle{
+    position: relative;
+    display: none;
+    width: 24px;
+    height: auto;
+}
+
+@media (max-width: 950px){
+    .searchbutton{
+        left: 0;
+    }
+    .menuToggle{
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        z-index: 10;
+        margin-left: 5px;
+    }
+    header .navbar{
+        position: absolute;
+        left: -50%;
+        transition: left 0.5s ease-in-out;
+        visibility: hidden;
+    }
+    header.open .navbar{
+        top: 58px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        flex-direction: column;
+        background: #fff;
+        width: 50%;
+        height: calc(100vh - 80px);
+        padding: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 10;
+    }
+    header.open .navbar li a{
+        font-size: 1.25em;
+    }
+    .hide{
+        display: none;
+        transition: 0.5s ease-in-out;
+    }
+}
+
+@media (max-width: 600px){
+    .searchbutton{
+        left: 0;
+    }
+    .menuToggle{
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        z-index: 10;
+        margin-left: 5px;
+    }
+    header .navbar{
+        position: absolute;
+        left: -100%;
+        transition: left 0.5s ease-in-out;
+        visibility: hidden;
+    }
+    header.open .navbar{
+        top: 58px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 10;
+    }
+    header.open .navbar li a{
+        font-size: 1.25em;
+    }
+    .hide{
+        display: none;
+        transition: 0.5s ease-in-out;
+    }
+}
+
+/*Cierre de header (copiar y pegar en todas las paginas)*/
+
+/*Seccion oculta*/
+
+.Oculto{
+    width: 100%;
+    height: 96px;
+    background: #333;
+}
+
+/*Cierre de seccion oculta*/
+
+/*Seccion de titulo*/
+.imgservice{
+    width: 100%;
+    height: 100px;
+    background: url('../Resources/BackgroundComfort.avif') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.imgservice::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Se ajusta completamente al contenedor */
+    background: rgba(0, 0, 0, 0.7); /* Mantiene el efecto de oscurecido */
+    z-index: 1;
+}
+
+.imgservice h1{
+    z-index: 2;
+}
+
+/*Cierre de titulo*/
+
+/*Abrir seccion de cartas*/
+/* Property Card Styles */
+.card-containerc {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.property-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.property-image {
+    flex: 0 0 40%;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.property-info {
+    flex: 1;
+    padding: 25px;
+}
+
+.property-info h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.property-info .description {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #555;
+}
+
+.location-info {
+    margin: 20px 0;
+}
+
+.location-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.location-btn {
+    display: inline-block;
+    background-color: #e7e7e2;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    background-color: #d9d9d4;
+    transform: translateY(-2px);
+}
+
+.info-btn {
+    display: inline-block;
+    background-color: #e7e7e2;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.info-btn:hover {
+    background-color: #d9d9d4;
+    transform: translateY(-2px);
+}
+
+.tutorials-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.tutorials-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Estilos para el modal de tutoriales */
+.tutorials-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tutorial-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #e8f4fd;
+}
+
+.tutorial-button i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.tutorial-button span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+    }
+    to {
+        box-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
+    }
+    
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 204, 0, 0);
+    }
+    
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+    }
+}
+
+.tutorials-btn.highlight {
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    position: relative;
+    z-index: 100;
+}
+
+/* Estilos para el modal de tutoriales (cerrar botón) */
+.close-tutorials-modal {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-tutorials-modal:hover {
+    color: #ccc;
+}
+
+/* Estilos para el modal de video */
+.video-modal-content {
+    max-width: 800px;
+    width: 90%;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: auto;
+}
+
+#tutorial-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%; /* Ajusta el ancho del video */
+    height: auto; /* Mantiene la proporción */
+    max-width: 640px; /* Máximo ancho */
+    max-height: 360px; /* Máximo alto */
+    background-color: #000;
+}
+
+
+/* Estilos para el botón de cerrar del modal de video */
+.close-video-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-video-modal:hover,
+.close-video-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animación para los botones de tutorial cuando están activos */
+.tutorial-button.active {
+    background-color: #e0f0ff;
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .property-card {
+        flex-direction: column;
+    }
+    
+    .property-image {
+        flex: 0 0 250px;
+    }
+}
+/*Cerrar seccion de cartas*/
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #ccc;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.modal-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    height: 160px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.modal-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.offer-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #4a90e2, #63b8ff);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.offer-btn:hover {
+    background: linear-gradient(to right, #3a80d2, #50a8ef);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los modales de ofertas */
+.offer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+.offer-modal-content {
+    background-color: white;
+    margin: 60px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    animation: offerModalFadeIn 0.4s ease-in-out;
+}
+
+@keyframes offerModalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.offer-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #333, #555);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.offer-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-offer-modal {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-offer-modal:hover {
+    color: #ccc;
+}
+
+.offer-modal-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-modal-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.offer-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-details {
+    padding: 25px;
+}
+
+.offer-details h3 {
+    color: #333;
+    margin: 20px 0 15px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.offer-details h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #4a90e2;
+}
+
+.offer-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.offer-details li {
+    padding: 8px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.offer-details li i {
+    margin-right: 10px;
+    color: #4a90e2;
+    width: 20px;
+    text-align: center;
+}
+
+.offer-details p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #777;
+    font-weight: normal;
+}
+
+.book-now-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #4a90e2, #63b8ff);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-now-btn:hover {
+    background: linear-gradient(to right, #3a80d2, #50a8ef);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .offer-modal-body {
+        flex-direction: row;
+    }
+    
+    .offer-modal-image {
+        flex: 0 0 45%;
+        height: auto;
+    }
+    
+    .offer-details {
+        flex: 0 0 55%;
+    }
+}
+
+@media (max-width: 767px) {
+    .offer-modal-content {
+        margin: 30px auto;
+    }
+    
+    .offer-details ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .price-info {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .book-now-btn {
+        width: 100%;
+    }
+}
+/*Cierre por completo de seccion de localidades*/
+.recomendation-amapola {
+    background-color: #fef9c3; /* Amarillo muy claro */
+    border: 6px solid #dee18d; /* Borde gris */
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+.recomendation-amapola h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+.cards-containerama {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: 32px;
+}
+.cardama {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+.cardama img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-contentama {
+    padding: 16px;
+}
+.cardama h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.cardama p {
+    color: #4b5563;
+    font-size: 14px;
+    margin-top: 8px;
+}
+.cardama a {
+    display: block;
+    margin-top: 16px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+/*Cierre de recomendacionesama*/
+
+/*Seccion mas recomendaciones*/
+.mas {
+    background: #fff;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los textos */
+}
+
+.mas h1,
+.mas h4 {
+    font-style: oblique; /* Letra inclinada */
+    text-decoration: none;
+    color: #000;
+}
+.mas a{
+    text-decoration: none;
+    color: #000;
+}
+
+@media (max-width: 470px) {
+    .mas h1,
+    .mas h4 {
+    font-style: oblique; /* Letra inclinada */
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+}
+}
+/*Cierre mas recomendaciones*/
+
+/*Seccion de footer (copiar y pegar en todas las paginas)*/
+/* Footer styles */
+.footer {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    color: #1e1e1e;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.instagram {
+    color: #e1306c;
+}
+
+.email {
+    color: #dd4b39;
+}
+
+.footer-info {
+    line-height: 1.6;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
+
+/* Bottom footer bar */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+.copyright {
+    text-align: left;
+}
+
+.languages {
+    text-align: center;
+}
+
+.language-link {
+    color: white;
+    text-decoration: none;
+}
+
+.language-link:hover {
+    text-decoration: underline;
+}
+
+.creditos a{
+    text-decoration: none;
+    color: white;
+}
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .copyright, .languages {
+        text-align: center;
+    }
+}
+
+/*Cierre de seccion de footer*/

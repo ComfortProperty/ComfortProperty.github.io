@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" type="text/css" href="../CSSJS/styleservice.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="top-message">
+        <p>¡Bienvenido a Comfort Property! ¡Los mejores airbnb de la ciudad!.</p>
+    </div>
+    <header>
+        <a href="../index.html" class="Logo">
+            <img src="../Resources/Logo.jpg" class="imglogo">
+        </a>
+        <nav class="grupo">
+            <ul class="navbar">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Services.html">Servicios</a></li>
+                <li><a href="City.html">Nuestra Ciudad</a></li>
+                <li><a href="info.html">Sobre Nostros</a></li>
+                <li><a href="Contact.html">Contáctenos</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="searchbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cancelbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                                                                 
+                </span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="menuToggle" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>              
+        </nav>
+        <div class="searchbox">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
+
+    <div class="Oculto">
+        <h2>Oculto</h2>
+    </div>
+
+    <!--Cierre de header-->
+
+    <div class="imgservice">
+        <h1>SERVICIOS</h1>
+    </div>
+
+    <!--Abrir cartas-->
+
+    <div class="card-containerc">
+        <div class="property-card">
+            <div class="property-image">
+                <img src="../Resources/BackgroundComfort.avif" alt="Amapolas 30">
+            </div>
+            <div class="property-info">
+                <h2>Amapolas 30</h2>
+                <p class="description">Relájate en este espacio tranquilo y con un toque de elegancia.</p>
+                
+                <div class="location-info">
+                    <p>Situado en una ubicación estratégica y segura, a solo unos pasos del consulado estadounidense y a pocas cuadras del CAS Matamoros. También se encuentra cerca de los dos puentes internacionales que conectan con Brownsville, TX.</p>
+                    
+                    <p>A una cuadra del Parque Olímpico, donde se alza el emblemático monumento de La gran puerta de México, símbolo de esta ciudad fronteriza, así como el museo dedicado al famoso cantante Rigo Tovar. Muy cerca de una variedad de excelentes restaurantes para satisfacer tus antojos.</p>
+                </div>
+                
+                <a href="https://www.google.com.mx/maps/place/Amapolas+30,+Jard%C3%ADn,+87330+Heroica+Matamoros,+Tamps./@25.8878421,-97.5036651,17z/data=!3m1!4b1!4m5!3m4!1s0x866f94f377b494b1:0xc9469a5b3c911a5f!8m2!3d25.8878373!4d-97.5010902?hl=es-419&entry=ttu&g_ep=EgoyMDI1MDIyMy4xIKXMDSoASAFQAw%3D%3D" class="location-btn">Ver ubicación en el mapa</a>
+                <a href="#" class="info-btn">Ver mas informacion</a>
+                <a href="#" class="tutorials-btn">Tutoriales</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Añadir el nuevo modal para los tutoriales -->
+    <div id="tutorials-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tutoriales</h2>
+                <span class="close-tutorials-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="tutorials-container">
+                    <div class="tutorial-button">
+                        <i class="fas fa-door-open"></i>
+                        <span>Puerta</span>
+                    </div>
+                    <div class="tutorial-button">
+                        <i class="fas fa-coffee"></i>
+                        <span>Cafetera</span>
+                    </div>
+                    <div class="tutorial-button">
+                        <i class="fas fa-wind"></i>
+                        <span>Aire Acondicionado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para tutorial de Cafetera -->
+    <div id="door-tutorial-modal" class="video-tutorial-modal modal">
+        <div class="modal-content video-modal-content">
+            <div class="modal-header">
+                <h2>Tutorial: Puerta</h2>
+                <span class="close-video-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <video class="tutorial-video" controls>
+                        <source src="../Resources/AmapolaTuto/Puerta.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para tutorial de Cafetera -->
+    <div id="coffee-tutorial-modal" class="video-tutorial-modal modal">
+        <div class="modal-content video-modal-content">
+            <div class="modal-header">
+                <h2>Tutorial: Cafetera</h2>
+                <span class="close-video-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <video class="tutorial-video" controls>
+                        <source src="../Resources/AmapolaTuto/Cafetera.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para tutorial de Cafetera -->
+    <div id="air-tutorial-modal" class="video-tutorial-modal modal">
+        <div class="modal-content video-modal-content">
+            <div class="modal-header">
+                <h2>Tutorial: Aire Acondicionado</h2>
+                <span class="close-video-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <video class="tutorial-video" controls>
+                        <source src="../Resources/AmapolaTuto/Aire.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="property-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalles de la Propiedad</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-cards">
+                    <div class="modal-card">
+                        <div class="card-image">
+                            <img src="../Resources/AmapolaSuits/Suits1.avif" alt="Imagen de propiedad 1">
+                        </div>
+                        <div class="card-content">
+                            <h3>Suit 1</h3>
+                            <p>El vestíbulo es un área común para los huéspedes. Puedes relajarte y ver videos. Puedes escribirnos si tienes dudas durante tu estancia.</p>
+                            <a href="#" class="offer-btn">Ver oferta</a>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-card">
+                        <div class="card-image">
+                            <img src="../Resources/AmapolaSuits/Suits2.jpeg" alt="Imagen de propiedad 2">
+                        </div>
+                        <div class="card-content">
+                            <h3>Suit 2</h3>
+                            <p>El vestíbulo es un área común para los huéspedes. Puedes relajarte y ver videos. Puedes escribirnos si tienes dudas durante tu estancia.</p>
+                            <a href="#" class="offer-btn">Ver oferta</a>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-card">
+                        <div class="card-image">
+                            <img src="../Resources/AmapolaSuits/Suits3.jpeg" alt="Imagen de propiedad 3">
+                        </div>
+                        <div class="card-content">
+                            <h3>Suit 3</h3>
+                            <p>El vestíbulo es un área común para los huéspedes. Puedes relajarte y ver videos. Puedes escribirnos si tienes dudas durante tu estancia.</p>
+                            <a href="#" class="offer-btn">Ver oferta</a>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-card">
+                        <div class="card-image">
+                            <img src="../Resources/AmapolaSuits/Suits4.jpeg" alt="Imagen de propiedad 4">
+                        </div>
+                        <div class="card-content">
+                            <h3>Suit 4</h3>
+                            <p>El vestíbulo es un área común para los huéspedes. Puedes relajarte y ver videos. Puedes escribirnos si tienes dudas durante tu estancia.</p>
+                            <a href="#" class="offer-btn">Ver oferta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales para cada oferta -->
+    <div id="offer-modal-1" class="offer-modal">
+        <div class="offer-modal-content">
+            <div class="offer-modal-header">
+                <h2>Suit 1</h2>
+                <span class="close-offer-modal">&times;</span>
+            </div>
+            <div class="offer-modal-body">
+                <div class="offer-modal-image">
+                    <img src="../Resources/AmapolaSuits/Suits1.avif" alt="Habitación Principal">
+                </div>
+                <div class="offer-details">
+                    <h3>Características</h3>
+                    <ul>
+                        <li><i class="fas fa-bed"></i> 2 camas matrimoniales </li>
+                        <li><i class="fas fa-tv"></i> Smart TV</li>
+                        <li><i class="fas fa-shirt"></i> Espacio para guardar ropa</li>
+                        <li><i class="fas fa-wind"></i> Aire acondicionado y calefaccion</li>
+                        <li><i class="fas fa-wifi"></i> WiFi de alta velocidad</li>
+                    </ul>
+                    
+                    <h3>Descripción</h3>
+                    <p><b>Acceso para huéspedes: </b>El vestíbulo es un espacio de uso común para los huéspedes de las 4 Suites. Contarás con una cómoda sala de estar, donde podrás ver videos informativos de la ciudad, esperar si estás haciendo algún trámite o relajarte mientras tus compañeros de estancia están listos.</p>
+                    <p><b>Durante tu estancia: </b>En todo momento puedes escribirnos a través de la plataforma, por si tienes dudas del funcionamiento de los equipos o de lo que se ofrece en la ciudad.</p>
+                    
+                    <h3>Reservar</h3>
+                    <div class="price-info">
+                        <a href="http://airbnb.com/h/amapolas30suite1" class="book-now-btn">Reservar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="offer-modal-2" class="offer-modal">
+        <div class="offer-modal-content">
+            <div class="offer-modal-header">
+                <h2>Suit 2</h2>
+                <span class="close-offer-modal">&times;</span>
+            </div>
+            <div class="offer-modal-body">
+                <div class="offer-modal-image">
+                    <img src="../Resources/AmapolaSuits/Suits2.jpeg" alt="Sala de Estar">
+                </div>
+                <div class="offer-details">
+                    <h3>Características</h3>
+                    <ul>
+                        <li><i class="fas fa-bed"></i> 2 camas matrimoniales </li>
+                        <li><i class="fas fa-wifi"></i> Smart TV y WiFi de alta velocidad</li>
+                        <li><i class="fas fa-kit-medical"></i> Botiquin de primeros auxilios, y multiples sistemas de seguridad</li>
+                        <li><i class="fas fa-wind"></i> Aire acondicionado y calefaccion</li>
+                        <li><i class="fas fa-door-closed"></i>Entrada y estacionamiento privado</li>
+                    </ul>
+                    
+                    <h3>Descripción</h3>
+                    <p><b>Acceso para huéspedes: </b>El vestíbulo es un espacio de uso común para los huéspedes de las 4 Suites. Contarás con una cómoda sala de estar, donde podrás ver videos informativos de la ciudad, esperar si estás haciendo algún trámite o relajarte mientras tus compañeros de estancia están listos.</p>
+                    <p><b>Durante tu estancia: </b>En todo momento puedes escribirnos a través de la plataforma, por si tienes dudas del funcionamiento de los equipos o de lo que se ofrece en la ciudad.</p>
+                    
+                    <h3>Reservar</h3>
+                    <div class="price-info">
+                        <a href="http://airbnb.com/h/amapolas30suite2" class="book-now-btn">Reservar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="offer-modal-3" class="offer-modal">
+        <div class="offer-modal-content">
+            <div class="offer-modal-header">
+                <h2>Suit 3</h2>
+                <span class="close-offer-modal">&times;</span>
+            </div>
+            <div class="offer-modal-body">
+                <div class="offer-modal-image">
+                    <img src="../Resources/AmapolaSuits/Suits3.jpeg" alt="Cocina Equipada">
+                </div>
+                <div class="offer-details">
+                    <h3>Características</h3>
+                    <ul>
+                        <li><i class="fas fa-couch"></i> Cama Queen Size y Cama de una plaza </li>
+                        <li><i class="fas fa-wifi"></i> Wifi de alta calidad y Smart TV</li>
+                        <li><i class="fas fa-kit-medical"></i> Multiples servicios de seguridad y bienestar</li>
+                        <li><i class="fas fa-door-closed"></i> Entrada privada y estacionamiento gratuito</li>
+                        <li><i class="fas fa-shirt"></i> Ropa de cama</li>
+                    </ul>
+                    
+                    <h3>Descripción</h3>
+                    <p><b>Acceso para huéspedes: </b>El vestíbulo es un espacio de uso común para los huéspedes de las 4 Suites. Contarás con una cómoda sala de estar, donde podrás ver videos informativos de la ciudad, esperar si estás haciendo algún trámite o relajarte mientras tus compañeros de estancia están listos.</p>
+                    <p><b>Durante tu estancia: </b>En todo momento puedes escribirnos a través de la plataforma, por si tienes dudas del funcionamiento de los equipos o de lo que se ofrece en la ciudad.</p>
+                    
+                    <h3>Reservar</h3>
+                    <div class="price-info">
+                        <a href="http://airbnb.com/h/amapolas30suite3" class="book-now-btn">Reservar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="offer-modal-4" class="offer-modal">
+        <div class="offer-modal-content">
+            <div class="offer-modal-header">
+                <h2>Suit 4</h2>
+                <span class="close-offer-modal">&times;</span>
+            </div>
+            <div class="offer-modal-body">
+                <div class="offer-modal-image">
+                    <img src="../Resources/BackgroundComfort.avif" alt="Terraza">
+                </div>
+                <div class="offer-details">
+                    <h3>Características</h3>
+                    <ul>
+                        <li><i class="fas fa-mountain"></i> Vista panorámica a la ciudad</li>
+                        <li><i class="fas fa-chair"></i> Mobiliario exterior confortable</li>
+                        <li><i class="fas fa-umbrella-beach"></i> Sombrilla para protección solar</li>
+                        <li><i class="fas fa-lightbulb"></i> Iluminación ambiental</li>
+                        <li><i class="fas fa-wifi"></i> Cobertura WiFi</li>
+                    </ul>
+                    
+                    <h3>Descripción</h3>
+                    <p><b>Acceso para huéspedes: </b>El vestíbulo es un espacio de uso común para los huéspedes de las 4 Suites. Contarás con una cómoda sala de estar, donde podrás ver videos informativos de la ciudad, esperar si estás haciendo algún trámite o relajarte mientras tus compañeros de estancia están listos.</p>
+                    <p><b>Durante tu estancia: </b>En todo momento puedes escribirnos a través de la plataforma, por si tienes dudas del funcionamiento de los equipos o de lo que se ofrece en la ciudad.</p>
+                    
+                    <h3>Reservar</h3>
+                    <div class="price-info">
+                        <a href="http://airbnb.com/h/amapolas30suite4" class="book-now-btn">Reservar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Cerrar cartas-->
+    <!--Cierre completo de seccion de locales-->
+    <div class="recomendation-amapola">
+        <h2>Recomendaciones Amapola</h2>
+        <div class="cards-containerama">
+            <!-- Tarjeta de ejemplo -->
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Pueblito.webp" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>Mi pueblito</h3>
+                    <p>Mi Pueblito Bar and Grill es un restaurante muy reconocido de la ciudad por su excelencia en comida mexicana.</p>
+                    <a href="https://maps.app.goo.gl/dgBgxYMS2zb33hyy5">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/SantaFe.webp" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>Santa Fe</h3>
+                    <p>Restaurante familiar decorado con motivos orientales en el que se ofrece buffet de comida china y mexicana.</p>
+                    <a href="https://maps.app.goo.gl/8oxCjSM7V4iiDdS66">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Parrillas.webp" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>Las parrillitas</h3>
+                    <p>Taco las parrillitas es un restaurante mexicano con ambiente familiar. Con opción de comer al aire libre.</p>
+                    <a href="https://maps.app.goo.gl/XavBsc92uHoo6gBY7">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Garcia.webp" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>García´s</h3>
+                    <p>Lugar familiar que ofrece platillos internacionales y antojitos mexicanos, además de un bar con música en vivo.</p>
+                    <a href="https://maps.app.goo.gl/GdFtg7CezKAYsGZu6">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Cafecito.webp" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>El cafécito</h3>
+                    <p>Cafetería cercana con excelente sazón. Perfecto para el desayuno o almuerzo del día.</p>
+                    <a href="https://maps.app.goo.gl/mX7sBFUwxkcBJi587">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Catrina.jpg" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>La catrina</h3>
+                    <p>Restaurante familiar y muy popular de la ciudad, con especialidad en comida mexicana y exquisitos cortes.</p>
+                    <a href="https://maps.app.goo.gl/EwKV1QpcnmdwSiQx5">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Cancilleria.jpg" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>La cancillería</h3>
+                    <p>Restaurante familiar de cocina argentina con excelente sazón y elegancia en su establecimiento.</p>
+                    <a href="https://maps.app.goo.gl/UR8HWh5jC93KoUNV9">Ver ubicación</a>
+                </div>
+            </div>
+            <div class="cardama">
+                <img src="../Resources/RecomendAma/Gios.jpg" alt="Imagen del lugar">
+                <div class="card-contentama">
+                    <h3>Gios Restaurante Italiano</h3>
+                    <p>Restaurante de cocina italiana, con un excelente sabor en todos sus platillos y un ambiente amigable</p>
+                    <a href="https://maps.app.goo.gl/Qjq58n2iBqFPWB537">Ver ubicación</a>
+                </div>
+            </div>
+            <!-- Agregar más tarjetas aquí -->
+        </div>
+    </div>
+    <!--Cierre seccion recomendacionesAma-->
+    <!--Abrir seccion mas recomendaciones-->
+    <div class="mas">
+        <h1>¿Quieres ver mas recomendaciones?</h1>
+        <h4><a href="https://programadestinosmexico.com/que-ver-y-hacer-en-matamoros/">a click aqui para ver mas...</a></h4>
+    </div>
+    <!--Cierre mas recomendaciones-->
+    <!--footer (Copiar y pegar en cada pagina)-->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/matamorosgobmx?locale=es_LA&_rdc=2&_rdr" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/matamorosgobmx/" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:reservaciones@comfortproperty.mx" class="social-icon email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer-info">
+            <p>Ubicaciones por todo Matamoros, ¿te gustaria ver todos los hogares?</p>
+            <p><a href="mailto:reservaciones@comfortproperty.mx">reservaciones@comfortproperty.mx</a></p>
+        </div>
+        
+        <!-- Bottom footer bar -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                Copyright © Comfort Property
+            </div>
+            <div class="creditos">
+                Desarrollado por <a href="https://www.linkedin.com/in/enrique-alonso-42998a320/"><b>Enrique Alonso</b></a> (ISC)
+            </div>
+        </div>
+    </div>
+    <!--Cierre de footer-->
+
+    
+    
+    <script src="../CSSJS/search.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para obtener parámetros de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Elementos del header y búsqueda
+        let searchbutton = document.querySelector('.searchbutton');
+        let cancelbbuton = document.querySelector('.cancelbutton');
+        let searchbox = document.querySelector('.searchbox');
+        let navbar = document.querySelector('.navbar');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        // Funcionalidad de búsqueda
+        if (searchbutton) {
+            searchbutton.onclick = function(){
+                searchbox.classList.add('active');
+                cancelbbuton.classList.add('active');
+                searchbutton.classList.add('active');
+                menuToggle.classList.add('hide');
+                header.classList.remove('open');
+            }
+        }
+        
+        if (cancelbbuton) {
+            cancelbbuton.onclick = function(){
+                searchbox.classList.remove('active');
+                cancelbbuton.classList.remove('active');
+                searchbutton.classList.remove('active');
+                menuToggle.classList.remove('hide')
+            }
+        }
+        
+        if (menuToggle) {
+            menuToggle.onclick = function(){
+                header.classList.toggle('open');
+                searchbox.classList.remove('active');
+                cancelbbuton.classList.remove('active');
+                searchbutton.classList.remove('active');
+            }
+        }
+
+        // Modales principales
+        const infoBtn = document.querySelector('.info-btn');
+        const modal = document.getElementById('property-modal');
+        const closeModal = document.querySelector('.close-modal');
+        
+        // Abrir el modal principal
+        if (infoBtn && modal) {
+            infoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        // Cerrar el modal principal
+        if (closeModal && modal) {
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+        }
+        
+        // Cerrar el modal al hacer clic fuera del contenido
+        if (modal) {
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        
+        // Cerrar el modal con la tecla ESC
+        if (modal) {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        
+        // Modales de ofertas
+        const offerBtns = document.querySelectorAll('.offer-btn');
+        const offerModals = document.querySelectorAll('.offer-modal');
+        const closeOfferBtns = document.querySelectorAll('.close-offer-modal');
+        
+        // Abrir modal de oferta
+        offerBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = `offer-modal-${index + 1}`;
+                const targetModal = document.getElementById(modalId);
+                
+                if (targetModal) {
+                    targetModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Cerrar modal de oferta con botón X
+        closeOfferBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const parentModal = this.closest('.offer-modal');
+                if (parentModal) {
+                    parentModal.style.display = 'none';
+                    
+                    // Solo restaurar scroll si no hay otro modal abierto
+                    if (document.querySelector('.offer-modal[style*="display: block"]') === null) {
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+        });
+        
+        // Cerrar modal de oferta al hacer clic fuera
+        offerModals.forEach(offerModal => {
+            offerModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    
+                    // Solo restaurar scroll si no hay otro modal abierto
+                    if (document.querySelector('.offer-modal[style*="display: block"]') === null) {
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+        });
+        
+        // Cerrar modal de oferta con ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const visibleOfferModal = document.querySelector('.offer-modal[style*="display: block"]');
+                if (visibleOfferModal) {
+                    visibleOfferModal.style.display = 'none';
+                    
+                    // Solo restaurar scroll si no hay otro modal abierto
+                    if (document.querySelector('.offer-modal[style*="display: block"]') === null) {
+                        document.body.style.overflow = '';
+                    }
+                }
+            }
+        });
+
+        // Modal de tutoriales
+        const tutorialsBtn = document.querySelector('.tutorials-btn');
+        const tutorialsModal = document.getElementById('tutorials-modal');
+        const closeTutorialsModal = document.querySelector('.close-tutorials-modal');
+        const tutorialButtons = document.querySelectorAll('.tutorial-button');
+        
+        // Función para hacer brillar el botón de tutoriales
+        function highlightTutorialsButton() {
+            if (tutorialsBtn) {
+                tutorialsBtn.classList.add('highlight');
+                // Agregar estilos inline para asegurar que el efecto sea visible
+                tutorialsBtn.style.boxShadow = '0 0 10px #ffcc00, 0 0 20px #ffcc00';
+                tutorialsBtn.style.animation = 'pulse 1.5s infinite';
+            }
+        }
+        
+        // Función para abrir el modal de tutoriales
+        function openTutorialsModal() {
+            if (tutorialsModal) {
+                tutorialsModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Abrir el modal de tutoriales con el botón
+        if (tutorialsBtn && tutorialsModal) {
+            tutorialsBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openTutorialsModal();
+            });
+        }
+        
+        // Cerrar el modal de tutoriales con el botón X
+        if (closeTutorialsModal && tutorialsModal) {
+            closeTutorialsModal.addEventListener('click', function() {
+                tutorialsModal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+        }
+        
+        // Cerrar el modal de tutoriales al hacer clic fuera del contenido
+        if (tutorialsModal) {
+            window.addEventListener('click', function(e) {
+                if (e.target === tutorialsModal) {
+                    tutorialsModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        
+        // Cerrar el modal de tutoriales con la tecla ESC
+        if (tutorialsModal) {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && tutorialsModal.style.display === 'block') {
+                    tutorialsModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        
+        // Modales de videos tutoriales
+        const doorTutorialModal = document.getElementById('door-tutorial-modal');
+        const coffeeTutorialModal = document.getElementById('coffee-tutorial-modal');
+        const airTutorialModal = document.getElementById('air-tutorial-modal');
+        const closeVideoModalButtons = document.querySelectorAll('.close-video-modal');
+        
+        // Mapeo de tipo de tutorial a modal
+        const tutorialModals = {
+            'Puerta': doorTutorialModal,
+            'Cafetera': coffeeTutorialModal,
+            'Aire Acondicionado': airTutorialModal
+        };
+        
+        // Abrir el modal específico al hacer clic en un botón de tutorial
+        tutorialButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const tutorialType = button.querySelector('span').textContent;
+                const targetModal = tutorialModals[tutorialType];
+                
+                if (targetModal) {
+                    // Cerrar el modal de tutoriales primero
+                    if (tutorialsModal) {
+                        tutorialsModal.style.display = 'none';
+                    }
+                    
+                    // Abrir el modal específico
+                    targetModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Marcar el botón como activo
+                    tutorialButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                }
+            });
+        });
+        
+        // Cerrar modales de video al hacer clic en el botón X
+        closeVideoModalButtons.forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.video-tutorial-modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                    
+                    // Pausar el video
+                    const video = modal.querySelector('video');
+                    if (video) {
+                        video.pause();
+                    }
+                    
+                    // Quitar clase activa de los botones
+                    tutorialButtons.forEach(btn => btn.classList.remove('active'));
+                }
+            });
+        });
+        
+        // Cerrar modales de video al hacer clic fuera del contenido
+        document.querySelectorAll('.video-tutorial-modal').forEach(function(modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = '';
+                    
+                    // Pausar el video
+                    const video = this.querySelector('video');
+                    if (video) {
+                        video.pause();
+                    }
+                    
+                    // Quitar clase activa de los botones
+                    tutorialButtons.forEach(btn => btn.classList.remove('active'));
+                }
+            });
+        });
+        
+        // Cerrar modales de video con la tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const openModal = document.querySelector('.video-tutorial-modal[style*="display: block"]');
+                if (openModal) {
+                    openModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                    
+                    // Pausar el video
+                    const video = openModal.querySelector('video');
+                    if (video) {
+                        video.pause();
+                    }
+                    
+                    // Quitar clase activa de los botones
+                    tutorialButtons.forEach(btn => btn.classList.remove('active'));
+                }
+            }
+        });
+        
+        // Verificar si el acceso fue a través del código QR
+        const source = getUrlParameter('source');
+        const qr = getUrlParameter('qr');
+        
+        // Función para abrir el modal desde QR
+        function openQRModal() {
+            try {
+                console.log('Intentando abrir modal desde QR');
+                
+                // Añadir un mensaje de depuración visible en la página
+                const debugElement = document.createElement('div');
+                debugElement.style.position = 'fixed';
+                debugElement.style.bottom = '0';
+                debugElement.style.right = '0';
+                debugElement.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                debugElement.style.color = 'white';
+                debugElement.style.padding = '5px';
+                debugElement.style.fontSize = '12px';
+                debugElement.style.zIndex = '9999';
+                debugElement.textContent = `URL: ${window.location.href}, Params: source=${source}, qr=${qr}`;
+                document.body.appendChild(debugElement);
+                
+                // Dar tiempo para asegurar que todo está cargado
+                setTimeout(function() {
+                    if (tutorialsBtn && tutorialsModal) {
+                        highlightTutorialsButton();
+                        openTutorialsModal();
+                        
+                        // Actualizar el mensaje de depuración
+                        debugElement.textContent += ' - Modal abierto!';
+                        
+                        // Auto-eliminar el elemento de depuración después de 5 segundos
+                        setTimeout(() => {
+                            document.body.removeChild(debugElement);
+                        }, 5000);
+                    } else {
+                        debugElement.textContent += ' - No se encontraron elementos del modal';
+                    }
+                }, 1000);
+            } catch (error) {
+                console.error('Error al abrir modal desde QR:', error);
+            }
+        }
+        
+        // Verificar QR con un enfoque más robusto
+        function checkQRParameters() {
+            // Verificar directamente en la URL completa
+            const urlString = window.location.href.toLowerCase();
+            
+            if (
+                urlString.includes('source=qr') || 
+                urlString.includes('qr=true') || 
+                source === 'qr' || 
+                qr === 'true'
+            ) {
+                // Dar más tiempo en dispositivos móviles
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                const delay = isMobile ? 1500 : 500;
+                
+                setTimeout(openQRModal, delay);
+                return true;
+            }
+            return false;
+        }
+        
+        // Ejecutar la verificación del QR
+        checkQRParameters();
+    });
+
+    // Añadir un evento de carga para asegurar que todo está correctamente cargado
+    window.addEventListener('load', function() {
+        // Verificar QR parámetros después de que todo esté completamente cargado
+        const source = new URLSearchParams(window.location.search).get('source');
+        const qr = new URLSearchParams(window.location.search).get('qr');
+        
+        if (source === 'qr' || qr === 'true') {
+            console.log('Parámetros QR detectados en evento load');
+            
+            const tutorialsBtn = document.querySelector('.tutorials-btn');
+            const tutorialsModal = document.getElementById('tutorials-modal');
+            
+            if (tutorialsBtn && tutorialsModal) {
+                // Hacer brillar el botón
+                tutorialsBtn.classList.add('highlight');
+                tutorialsBtn.style.boxShadow = '0 0 10px #ffcc00, 0 0 20px #ffcc00';
+                
+                // Abrir el modal con un retraso para móviles
+                setTimeout(function() {
+                    tutorialsModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }, 1500);
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" type="text/css" href="../CSSJS/stylecity.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="top-message">
+        <p>¡Bienvenido a Comfort Property! ¡Los mejores airbnb de la ciudad!.</p>
+    </div>
+    <header>
+        <a href="../index.html" class="Logo">
+            <img src="../Resources/Logo.jpg" class="imglogo">
+        </a>
+        <nav class="grupo">
+            <ul class="navbar">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Services.html">Servicios</a></li>
+                <li><a href="City.html">Nuestra Ciudad</a></li>
+                <li><a href="info.html">Sobre Nostros</a></li>
+                <li><a href="Contact.html">Contáctenos</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="searchbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cancelbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                                                                 
+                </span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="menuToggle" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>              
+        </nav>
+        <div class="searchbox">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
+
+    <div class="Oculto">
+        <h2>Oculto</h2>
+    </div>
+
+    <div class="Citys">
+        <h2><b>NUESTRA CIUDAD</b></h2>
+    </div>
+
+    <div class="descripcion">
+        <div class="historia-container">
+            <div class="imagen-container">
+                <img src="../Resources/Matamoros/Noche.webp" alt="H. Matamoros">
+            </div>
+            <div class="contenido">
+                <h2>La Historia de H. Matamoros</h2>
+                <p>En 1774, un grupo de trece valientes colonos —doce provenientes de Camargo y uno de Reynosa— se aventuró a fundar una nueva comunidad en un terreno fértil, decidiendo establecer sus ranchos y adquirir 113 sitios de ganado mayor. A esta nueva población la bautizaron inicialmente como "San Juan de los Esteros", aunque poco después adoptó el nombre de "Nuestra Señora del Refugio de los Esteros". Los habitantes, sin embargo, la llamaban con cariño "Villa del Refugio"...</p>
+                <button class="seguir-leyendo"><a href="https://drive.google.com/file/d/1hQQEgiSS5UL6uqCyGJFXzmpat4bKl2kV/view">Seguir leyendo</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="turist">
+        <div class="titlet">
+            <h2><b>NUESTROS PRINCIPALES ATRACTIVOS TURISTICOS</b></h2>
+        </div>
+        <!--Seccion de localidades-->
+        <div class="card-container">
+            <div class="card">
+                <img src="../Resources/Matamoros/Bagdad.jpg">
+                <div class="card-content">
+                    <h2>Playa Bagdad</h2>
+                    <p>Es un destino tranquilo y natural, conocido por su amplia franja de arena dorada y aguas cálidas, así como su amplia variedad de restaurantes. Ideal para quienes buscan relajarse, practicar deportes acuáticos o la pesca.</p>
+                    <a href="https://maps.app.goo.gl/iWigGwKeLVx7aUU88" class="btn">Ubicación</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../Resources/Matamoros/Plaza.jpg">
+                <div class="card-content">
+                    <h2>Plaza Principal Hidalgo</h2>
+                    <p>Es el corazón del centro histórico de la ciudad. Un lugar perfecto para pasear, disfrutar de la arquitectura local y visitar el Palacio de la Presidencia Municipal. Además, en sus alrededores hay restaurantes y tiendas para conocer más sobre la cultura local.</p>
+                    <a href="https://maps.app.goo.gl/TTqh6VPNBWqhVcEf9" class="btn">Ubicación</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../Resources/Matamoros/Museos.jpg">
+                <div class="card-content">
+                    <h2>Museo Casamata y museo de Rigo Tovar</h2>
+                    <p>El Museo Casamata en Matamoros es una fortaleza histórica del siglo XIX que ahora alberga exposiciones sobre la historia local, incluyendo la Independencia de México y la Guerra entre México y Estados Unidos, brindando a los visitantes una mirada profunda al pasado de la ciudad. Por otro lado, Rigo Tovar, nacido en Matamoros en 1946, es un ícono de la música mexicana, especialmente conocido por su estilo único de cumbia y música tropical. Con éxitos como "Perdóname", Tovar dejó un legado musical que sigue siendo parte fundamental de la cultura musical mexicana, especialmente en el noreste del país. Ambos, el museo y el cantante, son emblemas de la rica historia y la vibrante cultura de Matamoros.</p>
+                    <a href="https://maps.app.goo.gl/SSrseY3Ls2VWa2jTA" class="btn">Museo Casa Mata ubicación</a>
+                    <a href="https://maps.app.goo.gl/dhWTmxCqg7CGJRW67" class="btn">Museo Rigo Tovar ubicación</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../Resources/Matamoros/Olimpico.jpeg">
+                <div class="card-content">
+                    <h2>Parque Olímpico </h2>
+                    <p>El Parque Olímpico de Matamoros es un lugar recreativo multifuncional que ofrece instalaciones deportivas, áreas para caminar y juegos infantiles. Además de su ambiente moderno y accesible, el parque alberga varios monumentos significativos, como el Monumento a los Héroes de la Independencia, el Monumento al Migrante, la Escultura de la Llama Olímpica, la Escultura de la Madre, y el Monumento a la Cultura, que rinden homenaje a la historia, la migración y los valores culturales de la región.</p>
+                    <a href="https://maps.app.goo.gl/yME8gqJr1663YsgX8" class="btn">Ubicación</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Cierre de header-->
+
+    <!--footer (Copiar y pegar en cada pagina)-->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/matamorosgobmx?locale=es_LA&_rdc=2&_rdr" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/matamorosgobmx/" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:reservaciones@comfortproperty.mx" class="social-icon email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer-info">
+            <p>Ubicaciones por todo Matamoros, ¿te gustaria ver todos los hogares?</p>
+            <p><a href="mailto:reservaciones@comfortproperty.mx">reservaciones@comfortproperty.mx</a></p>
+        </div>
+        
+        <!-- Bottom footer bar -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                Copyright © Comfort Property
+            </div>
+            <div class="creditos">
+                Desarrollado por <a href="https://www.linkedin.com/in/enrique-alonso-42998a320/"><b>Enrique Alonso</b></a> (ISC)
+            </div>
+        </div>
+    </div>
+    <!--Cierre de footer-->
+    
+    <script src="../CSSJS/search.js"></script>
+<script>
+    let searchbutton = document.querySelector('.searchbutton');
+    let cancelbbuton = document.querySelector('.cancelbutton');
+    let searchbox = document.querySelector('.searchbox');
+    let navbar = document.querySelector('.navbar');
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+
+    searchbutton.onclick = function(){
+        searchbox.classList.add('active');
+        cancelbbuton.classList.add('active');
+        searchbutton.classList.add('active');
+        menuToggle.classList.add('hide');
+        header.classList.remove('open');
+    }
+    cancelbbuton.onclick = function(){
+        searchbox.classList.remove('active');
+        cancelbbuton.classList.remove('active');
+        searchbutton.classList.remove('active');
+        menuToggle.classList.remove('hide')
+    }
+    menuToggle.onclick = function(){
+        header.classList.toggle('open');
+        searchbox.classList.remove('active');
+        cancelbbuton.classList.remove('active');
+        searchbutton.classList.remove('active');
+    }
+    /*Script de header, copiar y pegar en todas las paginas*/
+</script>
+</body>
+</html>

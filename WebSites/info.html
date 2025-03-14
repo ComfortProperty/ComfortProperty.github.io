@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" type="text/css" href="../CSSJS/styleinfo.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="top-message">
+        <p>¡Bienvenido a Comfort Property! ¡Los mejores airbnb de la ciudad!.</p>
+    </div>
+    <header>
+        <a href="../index.html" class="Logo">
+            <img src="../Resources/Logo.jpg" class="imglogo">
+        </a>
+        <nav class="grupo">
+            <ul class="navbar">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Services.html">Servicios</a></li>
+                <li><a href="City.html">Nuestra Ciudad</a></li>
+                <li><a href="info.html">Sobre Nostros</a></li>
+                <li><a href="Contact.html">Contáctenos</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="searchbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cancelbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                                                                 
+                </span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="menuToggle" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>              
+        </nav>
+        <div class="searchbox">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
+
+    <div class="Oculto">
+        <h2>Oculto</h2>
+    </div>
+
+    <div class="titulo">
+        <h2><b>SOBRE NOSOTROS</b></h2>
+    </div>
+
+    <div class="me">
+        <div class="image-container">
+          <img src="../Resources/BackgroundComfort.avif" alt="Casa Airbnb en Matamoros">
+        </div>
+        <div class="text-container">
+          <h2>Sobre nosotros</h2>
+          <p>Somos tu Airbnb ideal, ubicado en la Col. Jardín de Matamoros, Tamaulipas. Aquí te ofrecemos un espacio acogedor y único para que disfrutes de tu estancia. Ya sea que vengas por negocios o por placer, nuestra casa está diseñada para brindarte confort y calidez, con un toque local que te hará sentir como en casa.</p>
+          
+          <p>Disfruta de la tranquilidad, la comodidad y la autenticidad de Matamoros en un ambiente relajado. ¡Te esperamos en <strong>Amapolas 30</strong> para una experiencia inolvidable!</p>
+          
+          <button class="discover-more"><a href="https://www.airbnb.mx/rooms/1361735783303198660?source_impression_id=p3_1740682127_P3FuCVTFFK_GQvOd">Descubre más</a></button>
+        </div>
+      </div>
+
+    <section class="testimonial-section">
+        <div class="overlay"></div>
+        
+        <div class="testimonial-container">
+            <div class="testimonial-slides">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Lugar muy instagrameable y elegante, cerca de parques muy lindos y excelentes restaurantes."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="../Resources/Perfiles/PerfilKenia.webp" alt="Kenia Quiroz">
+                            </div>
+                            <h4 class="author-name">Kenia Quiroz</h4>
+                            <p class="author-info">Huésped reciente de Amapolas 30</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Súper buena ubicación y cerca de las oficinas consulares, la anfitriona muy atenta y al pendiente en todo momento."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="../Resources/Perfiles/PerfilAdan.webp" alt="Adan">
+                            </div>
+                            <h4 class="author-name">Adan Diaz</h4>
+                            <p class="author-info">Huésped reciente de Amapolas 30</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Si vienes al Consulado Americano o a Space X, sin duda este apartamento es una excelente opción."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="../Resources/Perfiles/PerfilMiguel.webp" alt="Miguel">
+                            </div>
+                            <h4 class="author-name">Miguel</h4>
+                            <p class="author-info">Huésped reciente de Amapolas 30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones de navegación -->
+        <div class="nav-buttons">
+            <div class="nav-btn prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="nav-btn next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        
+        <!-- Indicadores -->
+        <div class="indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+    </section>
+
+    <!--Cierre de secion de opiniones-->
+
+    <div class="reglas">
+        <div class="contenido-reglas">
+            <h1>Reglas de la casa</h1>
+            <p>Te hospedarás en la casa de otra persona, así que trátala con cuidado y respeto.</p>
+            
+            <h2>Llegada y salida</h2>
+            <ul>
+                <li>Llegada a partir de las 3:00 p.m.</li>
+                <li>Salida antes de las 11:00 a.m.</li>
+                <li>Llegada autónoma con candado inteligente</li>
+            </ul>
+            
+            <h2>Durante tu estancia</h2>
+            <ul>
+                <li>4 huéspedes como máximo</li>
+                <li>Se admiten mascotas</li>
+                <li>Horas de silencio</li>
+                <li>11:00 p.m. - 7:00 a.m.</li>
+                <li>No se admiten fiestas o eventos</li>
+                <li>Fotografía comercial no autorizada</li>
+                <li>Prohibido fumar</li>
+            </ul>
+            
+            <h2>Antes de que te vayas</h2>
+            <ul>
+                <li>Apaga los aparatos</li>
+                <li>Cierra con llave</li>
+            </ul>
+        </div>
+        
+        <div class="imagen-reglas">
+            <img src="../Resources/Logo.jpg" alt="AMAPOLAS B">
+        </div>
+    </div>
+
+    <div class="map-container">
+        <h1 class="map-title">NUESTRAS UBICACIONES</h1>
+        <div id="map"></div>
+    </div>
+
+     <!--footer (Copiar y pegar en cada pagina)-->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/matamorosgobmx?locale=es_LA&_rdc=2&_rdr" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/matamorosgobmx/" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:reservaciones@comfortproperty.mx" class="social-icon email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer-info">
+            <p>Ubicaciones por todo Matamoros, ¿te gustaria ver todos los hogares?</p>
+            <p><a href="mailto:reservaciones@comfortproperty.mx">reservaciones@comfortproperty.mx</a></p>
+        </div>
+        
+        <!-- Bottom footer bar -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                Copyright © Comfort Property
+            </div>
+            <div class="creditos">
+                Desarrollado por <a href="https://www.linkedin.com/in/enrique-alonso-42998a320/"><b>Enrique Alonso</b></a> (ISC)
+            </div>
+        </div>
+    </div>
+    <!--Cierre de footer-->
+    
+    <script src="../CSSJS/search.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let searchbutton = document.querySelector('.searchbutton');
+        let cancelbbuton = document.querySelector('.cancelbutton');
+        let searchbox = document.querySelector('.searchbox');
+        let navbar = document.querySelector('.navbar');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        searchbutton.onclick = function(){
+            searchbox.classList.add('active');
+            cancelbbuton.classList.add('active');
+            searchbutton.classList.add('active');
+            menuToggle.classList.add('hide');
+            header.classList.remove('open');
+        }
+        cancelbbuton.onclick = function(){
+            searchbox.classList.remove('active');
+            cancelbbuton.classList.remove('active');
+            searchbutton.classList.remove('active');
+            menuToggle.classList.remove('hide')
+        }
+        menuToggle.onclick = function(){
+            header.classList.toggle('open');
+            searchbox.classList.remove('active');
+            cancelbbuton.classList.remove('active');
+            searchbutton.classList.remove('active');
+        }
+        const cards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const indicators = document.querySelectorAll('.indicator');
+            const totalSlides = cards.length;
+            let currentSlide = 0;
+            
+            // Función para actualizar las diapositivas
+            function updateSlides() {
+                cards.forEach((card, index) => {
+                    if (index === currentSlide) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+                
+                // Actualizar los indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Evento para botón anterior
+            prevBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlides();
+            });
+            
+            // Evento para botón siguiente
+            nextBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlides();
+            });
+            
+            // Eventos para los indicadores
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    currentSlide = parseInt(this.getAttribute('data-index'));
+                    updateSlides();
+                });
+            });
+            
+            // Cambio automático de diapositivas cada 5 segundos
+            setInterval(function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlides();
+            }, 5000);
+        });
+    /*Script de header, copiar y pegar en todas las paginas*/
+</script>
+<script src="../CSSJS/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" type="text/css" href="../CSSJS/stylecontacti.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="top-message">
+        <p>¡Bienvenido a Comfort Property! ¡Los mejores airbnb de la ciudad!.</p>
+    </div>
+    <header>
+        <a href="../index.html" class="Logo">
+            <img src="../Resources/Logo.jpg" class="imglogo">
+        </a>
+        <nav class="grupo">
+            <ul class="navbar">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Services.html">Servicios</a></li>
+                <li><a href="City.html">Nuestra Ciudad</a></li>
+                <li><a href="info.html">Sobre Nostros</a></li>
+                <li><a href="Contact.html">Contáctenos</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="searchbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="cancelbutton" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                                                                 
+                </span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="menuToggle" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>              
+        </nav>
+        <div class="searchbox">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
+
+    <div class="Oculto">
+        <h2>Oculto</h2>
+    </div>
+
+    <!-- Sección de contacto -->
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Información de Contacto</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>87330 C. Amapolas 30 Col. Jardín, H. Matamoros, Tam.</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>reservaciones@comfortproperty.mx</p>
+                </div>
+            </div>
+            <div id="map" class="contact-map"></div>
+        </div>
+        <div class="contact-form">
+            <h2>Envíanos un mensaje</h2>
+            <form action="https://formspree.io/f/mqapakan" method="POST"
+>
+                <div class="form-group">
+                    <label for="name">Nombre <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Número de teléfono</label>
+                    <div class="phone-input">
+                        <span class="country-code">+52</span>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto <span class="required">*</span></label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!--footer (Copiar y pegar en cada pagina)-->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/matamorosgobmx?locale=es_LA&_rdc=2&_rdr" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/matamorosgobmx/" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:reservaciones@comfortproperty.mx" class="social-icon email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer-info">
+            <p>Ubicaciones por todo Matamoros, ¿te gustaria ver todos los hogares?</p>
+            <p><a href="mailto:reservaciones@comfortproperty.mx">reservaciones@comfortproperty.mx</a></p>
+        </div>
+        
+        <!-- Bottom footer bar -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                Copyright © Comfort Property
+            </div>
+            <div class="creditos">
+                Desarrollado por <a href="https://www.linkedin.com/in/enrique-alonso-42998a320/"><b>Enrique Alonso</b></a> (ISC)
+            </div>
+        </div>
+    </div>
+    <!--Cierre de footer-->
+    
+    <script src="../CSSJS/search.js"></script>
+    <script>
+        let searchbutton = document.querySelector('.searchbutton');
+        let cancelbbuton = document.querySelector('.cancelbutton');
+        let searchbox = document.querySelector('.searchbox');
+        let navbar = document.querySelector('.navbar');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        searchbutton.onclick = function(){
+            searchbox.classList.add('active');
+            cancelbbuton.classList.add('active');
+            searchbutton.classList.add('active');
+            menuToggle.classList.add('hide');
+            header.classList.remove('open');
+        }
+        cancelbbuton.onclick = function(){
+            searchbox.classList.remove('active');
+            cancelbbuton.classList.remove('active');
+            searchbutton.classList.remove('active');
+            menuToggle.classList.remove('hide')
+        }
+        menuToggle.onclick = function(){
+            header.classList.toggle('open');
+            searchbox.classList.remove('active');
+            cancelbbuton.classList.remove('active');
+            searchbutton.classList.remove('active');
+        }
+        /*Script de header, copiar y pegar en todas las paginas*/
+
+        // Mapa
+        document.addEventListener('DOMContentLoaded', function() {
+            var map = L.map('map').setView([25.8690, -97.5027], 15); // Coordenadas de Matamoros
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            L.marker([25.8690, -97.5027]).addTo(map)
+                .bindPopup('Amapolas 30, Col. Jardín')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
